@@ -1,7 +1,6 @@
 const axios = require('axios')
 
 const core = require('@actions/core')
-import * as fs from 'fs'
 const github = require('@actions/github')
 
 const webhook = core.getInput('webhook')
@@ -39,9 +38,8 @@ const payload = {
 axios
   .post(webhook, payload)
   .then((res) => {
-    //core.setOutput('result', 'Webhook sent')
-    fs.appendFileSync(process.env.GITHUB_OUTPUT, `result=Webhook sent\n`)
+    core.setOutput('result', 'Webhook sent')
   })
   .catch((err) => {
-    throw new Error(`Post to webhook failed, ${err}`)
+    core.setFailed(`Post to webhook failed, ${err}`)
   })
