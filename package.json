@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/binotaliu/action-discord-notifier#readme",
   "dependencies": {
-    "@actions/github": "^2.2.0",
-    "axios": "^0.21.4"
+    "@actions/github": "^6.0.0",
+    "axios": "^1.7.9"
   },
   "devDependencies": {
     "@actions/core": "^1.11.1"
